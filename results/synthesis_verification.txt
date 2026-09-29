@@ -1,0 +1,45 @@
+==============================================================================
+Verification of the theorems proved or recomputed in the integrating manuscript
+==============================================================================
+
+[1] Theorem 1.1(1): exact local index at p = 1/2 (50-digit arithmetic; the next coefficient is 429/64)
+  delta = 0.001 : exact 1.000001250002625e-6, three-term series 1.000001250002625e-6, (exact - series) / delta^8 = 6.703143992
+  delta = 0.01  : exact 0.0001000125026256705, three-term series 0.000100012502625, (exact - series) / delta^8 = 6.705024793
+  delta = 0.05  : exact 0.002507853779334653, three-term series 0.002507853515625, (exact - series) / delta^8 = 6.750967127
+  delta = 0.1   : exact 0.01012769398975189, three-term series 0.010127625, (exact - series) / delta^8 = 6.898975189
+  remainder / delta^8 -> 429/64 = 6.703125 as delta -> 0: PASS
+
+[2] Theorem 1.1(2): divergence of a correlated pair with unit variances
+  rho = 0.05 : closed form 0.000313184858, direct Bhattacharyya 0.000313184858, rho^2/8 0.000312500000, rho^2/8 + 7 rho^4/64 0.000313183594
+  closed form equals the direct computation (rho = 0.05): PASS
+  rho = 0.1  : closed form 0.001261018854, direct Bhattacharyya 0.001261018854, rho^2/8 0.001250000000, rho^2/8 + 7 rho^4/64 0.001260937500
+  closed form equals the direct computation (rho = 0.1): PASS
+  rho = 0.3  : closed form 0.012199176307, direct Bhattacharyya 0.012199176307, rho^2/8 0.011250000000, rho^2/8 + 7 rho^4/64 0.012135937500
+  closed form equals the direct computation (rho = 0.3): PASS
+  rho = 0.6  : closed form 0.064416435921, direct Bhattacharyya 0.064416435921, rho^2/8 0.045000000000, rho^2/8 + 7 rho^4/64 0.059175000000
+  closed form equals the direct computation (rho = 0.6): PASS
+  partial sums S(K) = sum_{k<=K} D_k with rho_k = 0.5 k^-alpha:
+    alpha = 0.25: S(1e2) = 0.619906, S(1e4) = 6.275177, S(1e6) = 62.556539; increment 1e4 -> 1e6 = 56.281362
+  alpha = 1/4: power growth (S(1e6) / S(1e4) close to 10^(2 * 0.5) = 10): PASS
+    alpha = 0.5: S(1e2) = 0.175124, S(1e4) = 0.318949, S(1e6) = 0.462860; increment 1e4 -> 1e6 = 0.143911
+  alpha = 1/2: logarithmic growth, increment 0.143911 vs (c^2/8) ln 100 = 0.143912: PASS
+    alpha = 0.75: S(1e2) = 0.085258, S(1e4) = 0.090868, S(1e6) = 0.091430; increment 1e4 -> 1e6 = 0.000562
+  alpha = 3/4: convergent, increment 5.62e-04 vs tail bound (c^2/8) * 2 / sqrt(1e4) = 6.25e-04: PASS
+
+[3] Proposition 1.2: pocket-local tilts of a common ensemble
+  n = 12, pocket F = [0, 1, 2]: D_B(full) = 0.131991949684176, D_B(pocket marginals) = 0.131991949684176
+  full-ensemble divergence equals the pocket-marginal divergence: PASS
+
+[4] Theorem 3.3: Szego rate, constant c_0 and the values at N = 501
+  Szego rate by quadrature: s = 0.009496821799
+  s = 0.0094968218 to ten digits: PASS
+  N =   50: D_cov = 0.4654695045, D_cov - s N = -0.0093715854
+  N =  100: D_cov = 0.9403105944, D_cov - s N = -0.0093715854
+  N =  200: D_cov = 1.8899927743, D_cov - s N = -0.0093715854
+  N =  501: D_cov = 4.7485361358, D_cov - s N = -0.0093715854
+  N = 1000: D_cov = 9.4874502133, D_cov - s N = -0.0093715854
+  D_cov(N) - s N = c_0 = -0.0093715854 for N >= 50: PASS
+  N = 501: D_mean = 0.0024408, D_cov = 4.74854, CKI = 4.75098, covariance share = 99.949%
+  D_mean(501) = 0.0024408, D_cov(501) = 4.74854, CKI = 4.75098, share 99.949%: PASS
+
+OVERALL: PASS

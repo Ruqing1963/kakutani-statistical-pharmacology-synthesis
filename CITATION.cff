@@ -1,0 +1,40 @@
+cff-version: 1.2.0
+message: "If you use this article, its code or data, please cite it as below."
+title: "Kakutani-KMS Theory of Ligand-Induced Conformational Phase Transitions: Measure-Class Obstructions, Covariance Criticality, and Tail Allostery in Computational Pharmacology"
+type: software
+authors:
+  - family-names: Chen
+    given-names: Zhengyi
+    affiliation: "Guangxi Key Laboratory of Drug Discovery and Optimization, School of Pharmacy, Guilin Medical University, Guilin 541199, P. R. China"
+    email: chenzhengyi@glmc.edu.cn
+  - family-names: Chen
+    given-names: Ruqing
+    affiliation: "GUT Geoservice Inc., Montreal, Québec, Canada"
+    email: ruqing@hotmail.com
+doi: 10.5281/zenodo.23042828
+date-released: 2026-09-29
+version: 1.0.0
+license: MIT
+repository-code: "https://github.com/Ruqing1963/kakutani-statistical-pharmacology-synthesis"
+preferred-citation:
+  type: article
+  title: "Kakutani-KMS Theory of Ligand-Induced Conformational Phase Transitions: Measure-Class Obstructions, Covariance Criticality, and Tail Allostery in Computational Pharmacology"
+  authors:
+    - family-names: Chen
+      given-names: Zhengyi
+    - family-names: Chen
+      given-names: Ruqing
+  year: 2026
+  doi: 10.5281/zenodo.23042828
+  url: "https://doi.org/10.5281/zenodo.23042828"
+keywords:
+  - Kakutani dichotomy
+  - Feldman-Hajek theorem
+  - KMS states
+  - conformational ensembles
+  - allostery
+  - Bhattacharyya distance
+  - spontaneous symmetry breaking
+  - Wasserstein distance
+  - free-energy perturbation
+  - computational pharmacology
